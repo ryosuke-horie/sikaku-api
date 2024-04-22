@@ -1,9 +1,14 @@
-/*
-  DO NOT RENAME THIS FILE FOR DRIZZLE-ORM TO WORK
-*/
-import { sqliteTable, text, integer } from "drizzle-orm/sqlite-core";
+import { sql } from "drizzle-orm";
+import { sqliteTable, integer, text } from "drizzle-orm/sqlite-core";
 
-export const users = sqliteTable("users", {
-  id: integer("id").primaryKey().notNull(),
-  name: text("name").notNull(),
+export const todos = sqliteTable("todos", {
+  id: integer("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
+  title: text("title").notNull(),
+  status: text("status", { enum: ["todo", "doing", "done"] }).default("todo"),
+  createdAt: integer("created_at", { mode: "timestamp" }).default(
+    sql`(strftime('%s', 'now'))`
+  ),
+  updatedAt: integer("updated_at", { mode: "timestamp" }).default(
+    sql`(strftime('%s', 'now'))`
+  ),
 });

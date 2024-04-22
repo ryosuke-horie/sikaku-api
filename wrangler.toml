@@ -1,5 +1,6 @@
 name = "sikaku-api"
 compatibility_date = "2023-12-01"
+main = "src/index.ts"
 
 # [vars]
 # MY_VAR = "my-variable"
@@ -16,6 +17,7 @@ compatibility_date = "2023-12-01"
 binding = "DB"
 database_name = "sikaku_database"
 database_id = "6a721ef3-fadf-4e0c-a5f0-db5b5ed1896e"
+migrations_dir = "drizzle/migrations"
 
 # [ai]
 # binding = "AI"
