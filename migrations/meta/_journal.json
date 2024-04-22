@@ -1,0 +1,13 @@
+{
+  "version": "5",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1713803039597,
+      "tag": "0000_silky_the_santerians",
+      "breakpoints": true
+    }
+  ]
+}
