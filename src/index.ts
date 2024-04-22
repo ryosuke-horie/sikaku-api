@@ -1,9 +1,21 @@
-import { Hono } from 'hono'
+import { Hono } from "hono";
+import { drizzle } from "drizzle-orm/d1";
+import { users } from "./schema";
 
-const app = new Hono()
+export interface Env {
+  DB: D1Database;
+}
 
-app.get('/', (c) => {
-  return c.text('Hello Hono!')
-})
-
-export default app
+const app = new Hono();
+// 失敗
+// export default {
+//   async fetch(
+//     request: Request,
+//     env: Env,
+//     etx: ExecutionContext
+//   ): Promise<Response> {
+//     const db = drizzle(env.DB);
+//     const result = await db.select().from(users).all();
+//     return Response.json(result);
+//   },
+// };
